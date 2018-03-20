@@ -1,0 +1,65 @@
+{% extends 'jdshow/index.html' %}
+
+{% block title %}手机详情{% endblock %}
+{% block content %}
+    <div style="background-color: lightsteelblue">
+        <div class="col-lg-12" style="background-color:lightblue">
+            <div class="col-lg-1">
+                <span>总的评论数</span>
+            </div>
+            <div class="col-lg-offset-8 col-lg-1">
+                <span>{{ data.comment_num }}</span>
+            </div>
+        </div>
+        <div class="col-lg-12" style="background-color:lightblue">
+            <hr>
+            <div class="col-lg-4" style="text-align: center">
+                <p>好评数{{ data.good }}</p>
+                <p>好评率{{ data.good_rate }}</p>
+            </div>
+            <div class="col-lg-4" style="text-align: center">
+                <p>中评数{{ data.gen }}</p>
+                <p>中评率{{ data.gen_rate }}</p>
+            </div>
+            <div class="col-lg-4" style="text-align: center">
+                 <p>差评数{{ data.bad }}</p>
+                <p>差评率{{ data.bad_rate }}</p>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.product_id }}</td>
+                    <td>{{ data.url }}</td>
+                    <td>{{ item.jd_shop_name }}</td>
+                    <td>{{ item.jd_product_price }}</td>
+                    <td>{{ item.jd_comment_num }}</td>
+                    <td>{{ item.jd_good_count }}</td>
+                    <td>{{ item.jd_gen_count }}</td>
+                    <td>{{ item.jd_bad_count }}</td>
+                    <td>{{ item.jd_add_count }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="col-lg-12">
+            <div id="main" style="width: 50%; height: 400px"></div>
+            <script>
+                echarts.init(document.getElementById('main')).setOption({
+                    title: {
+                        text: '手机评论数据展示'
+                    },
+                    series:{
+                         type: 'pie',
+                data: [
+                    {name: '好评率', value: {{data.good_comment_num}}},
+                    {name: '中评率', value: {{data.bad_comment_num}}},
+                    {name: '差评率', value: {{data.gen_comment_num}}}
+                ]}
+                })
+            </script>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

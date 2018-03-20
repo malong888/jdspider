@@ -1,0 +1,15 @@
+<div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}">前一页</a>
+        {% endif %}
+
+        <span class="current">
+             {{ items.number }} / {{ items.paginator.num_pages }}
+        </span>
+
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}">后一页</a>
+        {% endif %}
+    </span>
+</div>
