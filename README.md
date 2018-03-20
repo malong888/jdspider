@@ -3,7 +3,7 @@
 
 项目依赖
 
-Django (2.0.3)
+Django (2.0.3)  
 mongoengine (0.15.0)
 redis (2.10.6)
 requests (2.18.4)
