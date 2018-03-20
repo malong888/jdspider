@@ -1,8 +1,8 @@
 # jd-scrapy-redis
 京东分布式爬虫
 
-项目依赖  
-python3.5以上  
+项目依赖  
+python3.5以上  
 ubunto  
 Django (2.0.3)  
 mongoengine (0.15.0)  
