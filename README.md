@@ -3,7 +3,7 @@
 
 项目依赖  
 python3.5以上  
-ubunto  
+ubuntu  
 Django (2.0.3)  
 mongoengine (0.15.0)  
 redis (2.10.6)  
