@@ -6,7 +6,7 @@ import time
 
 def process_items(limit=0,wait=0.1,timeout=5):
     # 连接redis
-    redis_cilen = redis.StrictRedis('192.168.153.132', 6379, db=0)
+    redis_cilen = redis.StrictRedis('localhost', 6379, db=0)
 
     # 连接mongo
     mongo_client = pymongo.MongoClient(host='localhost', port=27017)
